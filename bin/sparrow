@@ -65,7 +65,7 @@ subcommand=$1
 
 # Echo the description of a subcommand. $1 is the script file.
 echo-description() {
-  local descline=$(grep -E "#\s+Description" "$1")
+  local descline="$(grep -E "#\s+Description" "$1")"
   echo "${descline##*Description: }" \
   | perl -pe "s|\`(.+?)\`|$(tput setaf 6)\1$(tput sgr0)|g"
 }

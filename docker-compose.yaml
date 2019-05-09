@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   gateway:
-    image: nginx:1.15
+    image: staticfloat/nginx-certbot
     depends_on:
       - backend
       - frontend

@@ -1,7 +1,6 @@
 FROM sparrowdata/backend-base:1.0
 
 COPY ./requirements.txt /install/requirements.txt
-RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir -r /install/requirements.txt
 
 RUN apk add --no-cache bash
