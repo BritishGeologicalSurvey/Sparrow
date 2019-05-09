@@ -1,14 +1,13 @@
 version: "3.4"
 services:
   gateway:
-    image: staticfloat/nginx-certbot
+    build: gateway
     depends_on:
       - backend
       - frontend
     ports:
       - $SPARROW_HTTP_PORT:80
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - frontend_build:/frontend
   backend:
     build: backend
